@@ -1,0 +1,24 @@
+class Engine:
+    def __init__(self, hp):
+        self.hp = hp
+
+class Wheel:
+    def __init__(self, size):
+        self.size = size
+
+class Car:
+    def __init__(self, make, model, horse_power, wheel_size):
+        self.make = make
+        self.model = model
+        self.engine = Engine(horse_power)
+        self.wheels = [Wheel(wheel_size) for wheel in range(4)]
+
+    def display_car(self):
+        print(f"{self.make} {self.model} {self.engine.hp}(hp) with wheels of {self.wheels[0].size}in")
+
+
+car1 = Car("Ford", "Mustang", 500, 18)
+car2 = Car("Mercedes", "Benz AMG E63 S" , 999, 19)
+
+print(car1.display_car())
+print(car2.display_car())
